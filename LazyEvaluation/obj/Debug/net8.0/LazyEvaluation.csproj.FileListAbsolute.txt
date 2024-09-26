@@ -1,0 +1,14 @@
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.AssemblyInfoInputs.cache
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.AssemblyInfo.cs
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.csproj.CoreCompileInputs.cache
+C:\Users\Aorus\source\repos\LazyEvaluation\bin\Debug\net8.0\LazyEvaluation.exe
+C:\Users\Aorus\source\repos\LazyEvaluation\bin\Debug\net8.0\LazyEvaluation.deps.json
+C:\Users\Aorus\source\repos\LazyEvaluation\bin\Debug\net8.0\LazyEvaluation.runtimeconfig.json
+C:\Users\Aorus\source\repos\LazyEvaluation\bin\Debug\net8.0\LazyEvaluation.dll
+C:\Users\Aorus\source\repos\LazyEvaluation\bin\Debug\net8.0\LazyEvaluation.pdb
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.dll
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\refint\LazyEvaluation.dll
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.pdb
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\LazyEvaluation.genruntimeconfig.cache
+C:\Users\Aorus\source\repos\LazyEvaluation\obj\Debug\net8.0\ref\LazyEvaluation.dll
