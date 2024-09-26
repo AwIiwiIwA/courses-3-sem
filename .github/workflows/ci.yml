@@ -10,7 +10,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-latest  # или windows-latest для Windows окружения
+    runs-on: ubuntu-latest  # Можно использовать 'windows-latest' для Windows окружения
 
     steps:
       - name: Checkout code
@@ -23,15 +23,12 @@ jobs:
 
       - name: Restore dependencies
         run: |
-          cd LazyEvaluation  # Перейдите в папку с вашим проектом
-          dotnet restore ILazyEvaluation.sln  # Восстанавливаем зависимости
+          dotnet restore "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation\ILazyEvaluation.sln"
 
       - name: Build
         run: |
-          cd LazyEvaluation  # Перейдите в папку с вашим проектом
-          dotnet build ILazyEvaluation.sln --configuration Release  # Сборка решения
+          dotnet build "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation\ILazyEvaluation.sln" --configuration Release
 
       - name: Test
         run: |
-          cd LazyEvaluation.Tests  # Перейдите в папку с вашими тестами
-          dotnet test ILazyEvaluation.Tests.csproj --configuration Release  # Запуск тестов
+          dotnet test "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation.Tests\ILazyEvaluation.Tests.csproj" --configuration Release
