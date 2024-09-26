@@ -22,10 +22,16 @@ jobs:
           dotnet-version: '8.0.x'  # Укажите версию .NET, которую вы используете
 
       - name: Restore dependencies
-        run: dotnet restore ILazy.sln  # Восстанавливаем зависимости
+        run: |
+          cd LazyEvaluation  # Перейдите в папку с вашим проектом
+          dotnet restore ILazyEvaluation.sln  # Восстанавливаем зависимости
 
       - name: Build
-        run: dotnet build ILazy.sln --configuration Release  # Сборка решения
+        run: |
+          cd LazyEvaluation  # Перейдите в папку с вашим проектом
+          dotnet build ILazyEvaluation.sln --configuration Release  # Сборка решения
 
       - name: Test
-        run: dotnet test ILazy.sln --configuration Release  # Запуск тестов
+        run: |
+          cd LazyEvaluation.Tests  # Перейдите в папку с вашими тестами
+          dotnet test ILazyEvaluation.Tests.csproj --configuration Release  # Запуск тестов
