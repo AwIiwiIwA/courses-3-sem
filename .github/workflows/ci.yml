@@ -1,34 +1,32 @@
-name: CI
-
-on:
-  push:
-    branches:
-      - main
-  pull_request:
-    branches:
-      - main
-
+name: C# build CI
+on: [push, pull_request]
 jobs:
-  build:
-    runs-on: ubuntu-latest  # Можно использовать 'windows-latest' для Windows окружения
-
+  build-Windows:
+    runs-on: windows-latest
     steps:
-      - name: Checkout code
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-      - name: Setup .NET
-        uses: actions/setup-dotnet@v3
+      - uses: actions/setup-dotnet@v3
         with:
-          dotnet-version: '8.0.x'  # Укажите версию .NET, которую вы используете
-
-      - name: Restore dependencies
-        run: |
-          dotnet restore "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation\ILazyEvaluation.sln"
+          dotnet-version: '7.0.x'
 
       - name: Build
-        run: |
-          dotnet build "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation\ILazyEvaluation.sln" --configuration Release
+        run: $files = Get-ChildItem -Recurse -Filter '*.sln'; foreach ($file in $files) {dotnet build $file.FullName}
 
-      - name: Test
-        run: |
-          dotnet test "C:\Users\Aorus\Desktop\ILazy\LazyEvaluation.Tests\ILazyEvaluation.Tests.csproj" --configuration Release
+      - name: Run Tests
+        run: $files = Get-ChildItem -Recurse -Filter '*.sln'; foreach ($file in $files) {dotnet test $file.FullName}
+
+  build-Ubuntu:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - uses: actions/setup-dotnet@v3
+        with:
+          dotnet-version: '7.0.x'
+
+      - name: Build
+        run: for f in $(find . -name "*sln"); do dotnet build $f; done
+
+      - name: Run Tests
+        run: for f in $(find . -name "*sln"); do dotnet test $f; done
